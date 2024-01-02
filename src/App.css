@@ -38,9 +38,10 @@
 
 .section-2{
   /* background-color: whitesmoke; */
-  width: auto;
-  display: flex;
+  /* width: auto; */
+  display: flex; 
   flex-direction: column;
+  padding-top: 100px;
 }
 .skill-icon{
   height: 120px;
@@ -130,4 +131,14 @@ nav a {
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+.section-4 span{
+  font-size: large;
+  color: white;
+}
+.section-4 a{
+  margin: 10px;
+}
+.bigger-icon {
+  font-size: 1.5em;
 }
