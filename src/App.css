@@ -1,5 +1,34 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 15%;
+  padding-bottom: 25%;
+}
+.body{
+  margin: 0;
+  padding: 0;
+  background-image: url("https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRhcmslMjBza3klMjB3aXRoJTIwc3RhcnN8ZW58MHx8MHx8fDA%3D");
+  height: 100%;
+}
+
+.full-screen-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+
+.full-screen-text h1 {
+  font-size: 3em; 
+}
+
+.full-screen-text p {
+  font-size: 1.5em; 
+  margin-top: 20px; 
 }
 
 .App-logo {
@@ -7,32 +36,62 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section-2{
+  /* background-color: whitesmoke; */
+  width: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.skill-icon{
+  height: 120px;
+  width: 80px;
+  max-width: 100px;
+}
+
+.textcenter{
+  text-align: center;
   color: white;
+  /* display: flex; */
+}
+.card-style{
+  width: 18rem;
+  /* flex-shrink: 1; */
+}
+.cardimg{
+  height: 300px;
+  width: 250px;
+  /* max-width: 200px; */
+}
+.section-3{
+  /* background-color: white; */
+  width: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* background-color: #333;  */
+  padding: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
 }
+
+nav li {
+  margin-right: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: white; /* Set your desired text color */
+  font-size: 1.2em; /* Set your desired font size */
+}
+
