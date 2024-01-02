@@ -1,16 +1,38 @@
 import './App.css';
 import React, { useEffect } from 'react';
+// import {skillsdata,skillsdata2,projectsData} from './constants';
+import CustomProjectComponent  from './CustomProjectComponent';
+export const skillsdata = [{title:"Angular",url:"https://seeklogo.com/images/A/angular-logo-B76B1CDE98-seeklogo.com.png"},
+{title:"React",url:"https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png"},
+{title:"HTML",url:"https://seeklogo.com/images/H/html5-logo-EF92D240D7-seeklogo.com.png"},
+{title:"CSS",url:"https://seeklogo.com/images/C/css3-logo-8724075274-seeklogo.com.png"},
+{title:"Bootstrap",url:"https://seeklogo.com/images/B/bootstrap-logo-3C30FB2A16-seeklogo.com.png"},
+{title:"JavaScript",url:"https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"}
+]
+export const skillsdata2=[
+  {title:"Microsoft .NET",url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN_tTVTwDKCfrAwAZ9l-J4Cag90SDH1UEfDA&usqp=CAU"},
+  {title:"Flask",url:"https://www.ivaylopavlov.com/wp-content/uploads/2019/02/2Python_flask-1280x720.jpg"},
+  {title:"SQL",url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTckS-0NPzDxWfqMgLfD_cyCZQmudUOkESiGU4DQ-Ng&s"},
+  {title:"Python",url:"https://www.svgrepo.com/show/376344/python.svg"}
+]
 
-const skillsdata = ["https://seeklogo.com/images/A/angular-logo-B76B1CDE98-seeklogo.com.png",
-"https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png",
-"https://seeklogo.com/images/H/html5-logo-EF92D240D7-seeklogo.com.png",
-"https://seeklogo.com/images/C/css3-logo-8724075274-seeklogo.com.png",
-"https://seeklogo.com/images/B/bootstrap-logo-3C30FB2A16-seeklogo.com.png"]
-const skillsdata2=[
-"https://seeklogo.com/images/1/net-logo-681E247422-seeklogo.com.png",
-"https://seeklogo.com/images/F/flask-logo-44C507ABB7-seeklogo.com.png",
-"https://seeklogo.com/images/M/microsoft-sql-server-logo-96AF49E2B3-seeklogo.com.png",
-"https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"]
+export const projectsData = [
+  {
+    title: 'Wine Quality Prediction',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1j7OyBgjdGZcShe7Hh_6s2DqYxNlT40w_4pItCqCq-g&s',
+    // image :"https://media.istockphoto.com/id/1329437819/vector/vector-wine-glass-cheers-illustration.jpg?s=612x612&w=0&k=20&c=VteUpSeoiD2SO5D6w1Y3f9LPGE5exXInf9WR-Vb3rtE=",
+    description: 'Made using Flask and Machine Learning Libraries.',
+    link: 'https://github.com/saiyskr/DICStage3',
+  },
+  {
+    title: 'Chatbot using Rasa NLU',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiFenaAiBSPNEYFKDWNo9ziKvbPoqhnr1JxQ&usqp=CAU',
+    description: 'Made using Angular and Python.',
+    link: 'https://github.com/saiyskr/Chatbot',
+  },
+];
+
+ 
 
 function App() {
 
@@ -59,45 +81,39 @@ function App() {
       </div>
 
       <div className='full-screen-text section-2' id="projects">
-        <h4 className='textcenter'>PROJECTS</h4>
-        <div className='flex-class row'>
-          <div className="card card-style col">
-            <img className="cardimg" src="https://images.unsplash.com/photo-1630369160812-26c7604cbd8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwd2luZSUyMGdsYXNzfGVufDB8fDB8fHww" alt="wine" />
-            <div className="card-body">
-              <h5 className="card-title">Wine Quality Prediction</h5>
-              <p className="card-text">Made using Flask and Machine Learning Libraries.</p>
-              <a href="https://github.com/saiyskr/DICStage3" target="_blank" rel="noreferrer" className="btn btn-primary">Project Link</a>
-            </div>
+      <h4 className='textcenter'>PROJECTS</h4>
+      <div className='row' style={{ height: '100vh' }}>
+        {projectsData.map((project, index) => (
+          <div key={index} className="col-md-6 mb-4">
+            <CustomProjectComponent
+              title={project.title}
+              image={project.image}
+              description={project.description}
+              link={project.link}
+            />
           </div>
-          <div className="card card-style col">
-            <img className="cardimg" src="https://images.unsplash.com/photo-1630369160812-26c7604cbd8c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwd2luZSUyMGdsYXNzfGVufDB8fDB8fHww" alt="wine" />
-            <div className="card-body">
-              <h5 className="card-title">Wine Quality Prediction</h5>
-              <p className="card-text">Made using Flask and Machine Learning Libraries.</p>
-              <a href="https://github.com/saiyskr/DICStage3" target="_blank" rel="noreferrer" className="btn btn-primary">Project Link</a>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
 
       <div className='full-screen-text section-3' id="skills">
       <h4 className='textcenter'>SKILLS</h4>
       <div className='row'>
-      <h6 className='m-4'> Frontend:</h6>
-      {skillsdata.map((url,index)=>{
+      <h5 className='m-4'> Frontend:</h5>
+      {skillsdata.map((item,index)=>{
         return(
           <>
-          <img src={url} className="skill-icon col m-4 pl-2" alt="icon" />
+          <img src={item.url} title={item.title} className="skill-icon col m-4 pl-2" alt="icon" />
           </>
         )
       })}
       </div>
       <div className='row'>
-      <h6 className='m-4'> Backend:</h6>
-      {skillsdata2.map((url,index)=>{
+      <h5 className='m-4'> Backend:</h5>
+      {skillsdata2.map((item,index)=>{
         return(
           <>
-          <img src={url} className="skill-icon col m-4 pl-4" alt="icon" />
+          <img src={item.url} title={item.title} className="skill-icon col m-4 p-2" alt="icon" />
           </>
         )
       })}
