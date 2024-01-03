@@ -2,6 +2,8 @@ import './App.css';
 import React, { useEffect } from 'react';
 // import {skillsdata,skillsdata2,projectsData} from './constants';
 import CustomProjectComponent  from './CustomProjectComponent';
+
+
 export const skillsdata = [{title:"Angular",url:"https://seeklogo.com/images/A/angular-logo-B76B1CDE98-seeklogo.com.png"},
 {title:"React",url:"https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png"},
 {title:"HTML",url:"https://seeklogo.com/images/H/html5-logo-EF92D240D7-seeklogo.com.png"},
@@ -10,9 +12,9 @@ export const skillsdata = [{title:"Angular",url:"https://seeklogo.com/images/A/a
 {title:"JavaScript",url:"https://seeklogo.com/images/J/javascript-logo-8892AEFCAC-seeklogo.com.png"}
 ]
 export const skillsdata2=[
-  {title:"Microsoft .NET",url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN_tTVTwDKCfrAwAZ9l-J4Cag90SDH1UEfDA&usqp=CAU"},
+  {title:"Microsoft .NET",url:"https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg"},
   {title:"Flask",url:"https://www.ivaylopavlov.com/wp-content/uploads/2019/02/2Python_flask-1280x720.jpg"},
-  {title:"SQL",url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBTckS-0NPzDxWfqMgLfD_cyCZQmudUOkESiGU4DQ-Ng&s"},
+  {title:"SQL",url:"https://static-00.iconduck.com/assets.00/sql-database-sql-azure-icon-1955x2048-4pmty46t.png"},
   {title:"Python",url:"https://www.svgrepo.com/show/376344/python.svg"}
 ]
 
@@ -63,6 +65,8 @@ function App() {
   }, []);
   return (
     <div className='body'>
+      
+      <img src='https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/416120378_2364014253804894_2691228165330858802_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=T8aB2xMMLKYAX-h_h2-&_nc_ht=scontent-lga3-1.xx&oh=00_AfBNW0pt7YHhrEoWBNFmRXyftBys7GVYrYueFuS4bqFnhA&oe=659A26A9' className='photo photo-img' alt='pic' />
       <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -71,7 +75,7 @@ function App() {
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-      <div className='full-screen-text' id="home">
+      <div className='full-screen-text2 description' id="home">
       
       <h4>Hi , I am Sai Kiran Reddy, a <strong>full-stack software developer</strong> </h4>
       
@@ -102,9 +106,10 @@ function App() {
       <h5 className='m-4'> Frontend:</h5>
       {skillsdata.map((item,index)=>{
         return(
-          <>
-          <img src={item.url} title={item.title} className="skill-icon col m-4 pl-2" alt="icon" />
-          </>
+          <div className="col m-4">
+          <img src={item.url} title={item.title} className='skill-icon'  alt="icon" />
+          <p>{item.title}</p>
+          </div>
         )
       })}
       </div>
@@ -112,9 +117,10 @@ function App() {
       <h5 className='m-4'> Backend:</h5>
       {skillsdata2.map((item,index)=>{
         return(
-          <>
-          <img src={item.url} title={item.title} className="skill-icon col m-4 p-2" alt="icon" />
-          </>
+          <div className="col m-2">
+          <img src={item.url} title={item.title} className='skill-icon-2'  alt="icon" />
+          <p>{item.title}</p>
+          </div>
         )
       })}
       </div>
