@@ -10,7 +10,7 @@ function CustomProjectComponent({ title, image, description, link }){
             <br />
             <h5 className="project-title">{title}</h5>
             <p className="project-description">{description}</p>
-            <a href={link} target="_blank" rel="noreferrer" className="btn btn-primary">Project Link</a>
+            <a href={link} target="_blank" rel="noreferrer" className="btn btn-light">Project Link</a>
         </div>
         </div>
     )
