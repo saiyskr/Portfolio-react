@@ -13,10 +13,10 @@ const skillsdata2=[
 ]
 function Skills(){
     return(
-        <div className='full-screen-text section-3' id="skills">
-      <h4 className='textcenter'>SKILLS</h4>
+      <section className='full-screen-text section-3 skills-section' id="skills">
+      <h2 className='textcenter'>Technical Skills</h2>
       <div className='row'>
-      <h5 className='m-4'> Frontend:</h5>
+      <h5 className='m-4'> FRONTEND:</h5>
       {skillsdata.map((item,index)=>{
         return(
           <div className="col m-4">
@@ -27,7 +27,7 @@ function Skills(){
       })}
       </div>
       <div className='row'>
-      <h5 className='m-4'> Backend:</h5>
+      <h5 className='m-4'> BACKEND:</h5>
       {skillsdata2.map((item,index)=>{
         return(
           <div className="col m-2">
@@ -37,7 +37,7 @@ function Skills(){
         )
       })}
       </div>
-      </div>
+      </section>
     )
 }
 export default Skills;

@@ -34,8 +34,8 @@ function App() {
     };
   }, []);
   return (
-    <div className='container-fluid body'>
-      <img src='https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/416120378_2364014253804894_2691228165330858802_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=T8aB2xMMLKYAX-h_h2-&_nc_ht=scontent-lga3-1.xx&oh=00_AfBNW0pt7YHhrEoWBNFmRXyftBys7GVYrYueFuS4bqFnhA&oe=659A26A9' className='photo photo-img' alt='pic' />
+    <div className='body'>
+      {/* <img src='https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/416120378_2364014253804894_2691228165330858802_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=T8aB2xMMLKYAX-h_h2-&_nc_ht=scontent-lga3-1.xx&oh=00_AfBNW0pt7YHhrEoWBNFmRXyftBys7GVYrYueFuS4bqFnhA&oe=659A26A9' className='photo photo-img' alt='pic' /> */}
       <nav>
         <ul>
             <li><a href="#home">Home</a></li>

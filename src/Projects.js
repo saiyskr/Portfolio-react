@@ -16,8 +16,8 @@ const projectsData = [
   ];
 function Projects(){
     return(
-        <div className='full-screen-text section-2' id="projects">
-      <h4 className='textcenter'>PROJECTS</h4>
+      <section className='full-screen-text section-2 projects-section' id="projects">
+      <h2 className='textcenter projects-section-header'>Some of my projects</h2>
       <div className='row' style={{ height: '100vh' }}>
         {projectsData.map((project, index) => (
           <div key={index} className="col-md-6 mb-4">
@@ -30,7 +30,7 @@ function Projects(){
           </div>
         ))}
       </div>
-    </div>
+    </section>
     )
 }
 export default Projects;
