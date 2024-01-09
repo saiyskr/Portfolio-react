@@ -190,7 +190,7 @@ nav a {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   padding: 0 2rem;
   /* background: var(--main-gray) !important; */
   font-family: 'Poppins', sans-serif;
@@ -222,7 +222,8 @@ nav a {
   justify-content: center;
   width: 100%;
   max-width: 980px;
-  margin-top: 4rem;
+  padding-top: 4rem;
+  /* padding-bottom: 1rem; */
   flex-wrap: wrap;
 }
 
@@ -252,7 +253,7 @@ nav a {
   text-align: center;
   padding: 10rem 2rem;
   background-color: #000;
-  background-image: linear-gradient(62deg, #29194d 0%, #23083d 100%);
+  background-image: linear-gradient(62deg, #2c194d 0%, #23083d 100%);
 }
 .home-section{
   display: flex;
@@ -280,7 +281,15 @@ nav a {
   /* background-color: #000;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%); */
   background-color: #000;
-  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  background-image: linear-gradient(62deg, #214971 0%, #091e5d 100%);
   padding-top: 200px;
   padding-bottom: 200px;
+}
+.email-form{
+  font-size: medium;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
