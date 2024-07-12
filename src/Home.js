@@ -13,7 +13,7 @@ const Home = () => {
         <h3>while writing clean code.</h3>
       </div>
       <br />
-      <button className="btn btn-danger resume-btn" onClick={handleViewResume}>
+      <button className="btn btn-danger resume-btn m-5" onClick={handleViewResume}>
         View Resume
       </button>
     </section>
