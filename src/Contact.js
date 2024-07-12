@@ -86,12 +86,14 @@ function Contact() {
           <input
             type="text"
             name="name"
-            className="form-control"
+            className="form-control form-class"
             aria-label="Name"
             aria-describedby="emailHelp"
             placeholder="Enter your Name"
             value={formData.name}
             onChange={handleChange}
+            // style={{ width: '100%' }}
+            required
           />
           <span className="error">{errors.name}</span>
           <br />
@@ -99,13 +101,15 @@ function Contact() {
         <div className="form-group">
           <input
             type="email"
-            className="form-control"
+            className="form-control form-class"
             name="email"
             aria-label="Email address"
             aria-describedby="emailHelp"
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
+            // style={{ width: '100%' }}
+            required
           />
           <span className="error">{errors.email}</span>
           <br />
@@ -113,16 +117,18 @@ function Contact() {
         <div className="form-group">
           <textarea
             name="message"
-            className="form-control"
+            className="form-control form-class"
             rows="3"
             aria-label="Email body"
             placeholder="Write message..."
             value={formData.message}
             onChange={handleChange}
+            // style={{ width: '100%' }}
             required
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <br />
+        <button type="submit" className="btn btn-danger send-btn">
           {loading ? 'Sending...' : 'Send Message'}
         </button>
       </form>

@@ -1,18 +1,17 @@
-function CustomProjectComponent({ title, image, description, link }){
-    return(
-        <div className="custom-project">
-        <img
-            className="project-image"
-            src={image}
-            alt={title}
-        />
-        <div className="project-details">
-            <br />
-            <h5 className="project-title">{title}</h5>
+// CustomProjectComponent.jsx
+import React from 'react';
+
+function CustomProjectComponent({ title, svg, description, link }) {
+    return (
+        <div className="project-card-content">
+            <div className="project-svg">
+                {svg}
+            </div>
+            <h3 className="project-title">{title}</h3>
             <p className="project-description">{description}</p>
-            <a href={link} target="_blank" rel="noreferrer" className="btn btn-light">Project Link</a>
+            <a href={link} className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
-        </div>
-    )
+    );
 }
-  export default CustomProjectComponent;
+
+export default CustomProjectComponent;

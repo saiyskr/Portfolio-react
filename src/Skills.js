@@ -14,7 +14,7 @@ const skillsdata2=[
 function Skills(){
     return(
       <section className='full-screen-text section-3 skills-section' id="skills">
-      <h2 className='textcenter'>Technical Skills</h2>
+      <h2 className='textcenter'>Some of my Technical Skills</h2>
       <div className='row'>
       <h5 className='m-4'> FRONTEND:</h5>
       {skillsdata.map((item,index)=>{

@@ -1,36 +1,46 @@
+import React from 'react';
 import CustomProjectComponent from "./CustomProjectComponent";
+import { WineSVG, ChatbotSVG } from './SVGComponents';
+
 const projectsData = [
     {
-      title: 'Wine Quality Prediction',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1j7OyBgjdGZcShe7Hh_6s2DqYxNlT40w_4pItCqCq-g&s',
-      // image :"https://media.istockphoto.com/id/1329437819/vector/vector-wine-glass-cheers-illustration.jpg?s=612x612&w=0&k=20&c=VteUpSeoiD2SO5D6w1Y3f9LPGE5exXInf9WR-Vb3rtE=",
-      description: 'Made using Flask and Machine Learning Libraries.',
-      link: 'https://github.com/saiyskr/DICStage3',
+      title: 'Fake News Detection using Deep Learning Models',
+      svg: <WineSVG />,
+      description: 'Made using PyTorch (Transformers,LSTMs and Attention mechanisms are used)',
+      link: 'https://github.com/saiyskr/FakeNewsDetection',
     },
     {
-      title: 'Chatbot using Rasa NLU',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiFenaAiBSPNEYFKDWNo9ziKvbPoqhnr1JxQ&usqp=CAU',
-      description: 'Made using Angular and Python.',
-      link: 'https://github.com/saiyskr/Chatbot',
+        title: 'Wine Quality Prediction',
+        svg: <WineSVG />,
+        description: 'Made using Flask and Machine Learning Libraries.',
+        link: 'https://github.com/saiyskr/DICStage3',
     },
-  ];
-function Projects(){
-    return(
-      <section className='full-screen-text section-2 projects-section' id="projects">
-      <h2 className='textcenter projects-section-header'>Some of my projects</h2>
-      <div className='row' style={{ height: '100vh' }}>
-        {projectsData.map((project, index) => (
-          <div key={index} className="col-md-6 mb-4">
-            <CustomProjectComponent
-              title={project.title}
-              image={project.image}
-              description={project.description}
-              link={project.link}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
-    )
+    {
+        title: 'Chatbot using Rasa NLU',
+        svg: <ChatbotSVG />,
+        description: 'Made using Angular and Python.',
+        link: 'https://github.com/saiyskr/Chatbot',
+    },
+];
+
+function Projects() {
+    return (
+        <section className='projects-section' id="projects">
+            <h2 className='projects-section-header'>Some of my projects</h2>
+            <div className='projects-grid'>
+                {projectsData.map((project, index) => (
+                    <div key={index} className="project-card">
+                        <CustomProjectComponent
+                            title={project.title}
+                            svg={project.svg}
+                            description={project.description}
+                            link={project.link}
+                        />
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
 }
+
 export default Projects;
