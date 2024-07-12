@@ -27,6 +27,7 @@ body, html {
 /* Home Section */
 .home-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -38,6 +39,10 @@ body, html {
 
 .content {
   max-width: 800px;
+}
+
+.resume-btn:hover{
+  transform: translateY(-10px);
 }
 
 .home-section h3 {
