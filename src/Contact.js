@@ -10,6 +10,10 @@ function Contact() {
     message: '',
   });
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const validateForm = () => {
     let isValid = true;
@@ -42,11 +46,14 @@ function Contact() {
     }
 
     setLoading(true);
+    setSuccessMessage('');
+    setErrorMessage('');
 
     try {
       const result = await emailjs.sendForm('service_d7akce4', 'template_eiqlxwg', form.current, '8OgsQrHWvCaPJOcUy');
       console.log(result.text);
-      console.log('Message sent!');
+      setSuccessMessage('Message sent successfully!');
+      setShowSuccess(true);
       // Clear form inputs
       form.current.reset();
       setFormData({
@@ -56,9 +63,14 @@ function Contact() {
       });
     } catch (error) {
       console.log(error.text);
-      console.log('Error sending message, try again!');
+      setErrorMessage('Error sending message, please try again.');
+      setShowError(true);
     } finally {
       setLoading(false);
+      setTimeout(() => {
+        setShowSuccess(false);
+        setShowError(false);
+      }, 3000);
     }
   };
 
@@ -92,7 +104,6 @@ function Contact() {
             placeholder="Enter your Name"
             value={formData.name}
             onChange={handleChange}
-            // style={{ width: '100%' }}
             required
           />
           <span className="error">{errors.name}</span>
@@ -108,7 +119,6 @@ function Contact() {
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
-            // style={{ width: '100%' }}
             required
           />
           <span className="error">{errors.email}</span>
@@ -123,7 +133,6 @@ function Contact() {
             placeholder="Write message..."
             value={formData.message}
             onChange={handleChange}
-            // style={{ width: '100%' }}
             required
           ></textarea>
         </div>
@@ -132,32 +141,36 @@ function Contact() {
           {loading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
+      {showSuccess && <div className="floating-notification success">{successMessage}</div>}
+      {showError && <div className="floating-notification error">{errorMessage}</div>}
       
-  <div class="contact-links">
-    <a
-      href="https://www.linkedin.com/in/saikiranreddyy/"
-      target="_blank"
-      class="btn contact-details"
-      rel="noopener noreferrer"
-      ><i className="fab fa-linkedin bigger-icon"></i> LinkedIn</a>
-    <a
-      id="profile-link"
-      href="https://github.com/saiyskr/"
-      target="_blank"
-      class="btn contact-details"
-      rel="noopener noreferrer"
-      ><i class="fab fa-github"></i> GitHub</a
-    >
-    <a href="mailto:syeruva2@buffalo.edu" class="btn contact-details"
-      ><i class="fas fa-at"></i> Send a mail</a
-    >
-    <a href="tel:716-939-7219" class="btn contact-details"
-      ><i class="fas fa-mobile-alt"></i> Call me</a
-    >
-  </div>
-  
-</section>
-    )
+      <div className="contact-links">
+        <a
+          href="https://www.linkedin.com/in/saikiranreddyy/"
+          target="_blank"
+          className="btn contact-details"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-linkedin bigger-icon"></i> LinkedIn
+        </a>
+        <a
+          id="profile-link"
+          href="https://github.com/saiyskr/"
+          target="_blank"
+          className="btn contact-details"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-github"></i> GitHub
+        </a>
+        <a href="mailto:syeruva2@buffalo.edu" className="btn contact-details">
+          <i className="fas fa-at"></i> Send a mail
+        </a>
+        <a href="tel:716-939-7219" className="btn contact-details">
+          <i className="fas fa-mobile-alt"></i> Call me
+        </a>
+      </div>
+    </section>
+  );
+}
 
-};
 export default Contact;

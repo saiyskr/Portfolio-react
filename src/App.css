@@ -410,3 +410,34 @@ nav a {
 .bigger-icon {
   font-size: 1.5em;
 }
+.success-message {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.floating-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.floating-notification.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.floating-notification.error {
+  background-color: #f44336;
+  color: white;
+}
