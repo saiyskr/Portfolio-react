@@ -224,7 +224,7 @@ nav a {
 }
 
 .send-btn:hover{
-  transform: translateY(-10px);
+  transform: translateY(-1px);
 }
 .contact-links a {
   color: var(--main-red);
